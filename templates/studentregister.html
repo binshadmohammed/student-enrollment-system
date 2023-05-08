@@ -1,0 +1,141 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="{% static '/css/styles.css'%}">
+
+  </head>
+  <body>
+    <div class="container" align="center">
+        <div class="registration-form">
+            <div class="main-head">
+                  <h1>Student Registration </h1>
+            </div>
+            <form action="studentsreg" method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <label class="lab-head" for="Name">Full Name: </label>
+                <input class="txt-input" type="text"name="name"  placeholder="Your Name"id="Full Name" required><br><br>
+                <label class="lab-head" for="email">email:</label>
+                <input  class="txt-input" type="email"name="email" placeholder="enter your email"id="email" required><br><br>
+
+                <label class="lab-head" for="phonenumber">mobile:</label>
+                <input  class="txt-input" type="text"name="mobile"  placeholder="Your number"id="phonenumber" required><br><br>
+                <label class="lab-head" for="date of birth">DOB</label>
+                <input class="txt-input" type="date" name="dob"  placeholder="Your dob"id="date of birth" required><br><br>
+                
+                <label class="lab-head" for="gender">Gender:</label>
+                <label for="male">Male</label>
+                <input type="radio" name="gender"  value="male" id="male">
+                <label for="male">Female</label>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="other">other</label>
+                <input type="radio" name="gender"  value="others" id="other"><br><br>
+               
+
+                <label class="lab-head"  for="relegion">relegion:</label>
+                <label for="islam">islam</label>
+                <input type="radio"name="relegion" value="islam" id="islam">
+                <label for="Hindhisum">Hindhisum</label>
+                <input type="radio"name="relegion" value="hindhisum" id="hindhisum">
+                <label for="christiany">christiany</label>
+                <input type="radio"name="relegion" value="hindhisum" id="christiany"><br><br>
+
+                <label class="lab-head2"  for="photo">Adhar:</label>
+                <input type="file" name="adhar" id="photo"><br><br>
+                <label class="lab-head2"  for="photo">photo upload:</label>
+                <input type="file" name="photo" id="photo"><br><br>
+
+
+
+        
+                <label  class="lab-head" for="address">Address:</label>
+                <textarea name="address" placeholder="Your address" id="address" cols="30" rows="5" required></textarea><br><br>
+
+
+                <label  class="lab-head" for="state">State</label>
+                <select class="txt-input" name="state"  id="state">
+                    <option><-- Select your State -- ></option>
+                    <option>Alappuzha</option>
+                    <option>Ernamkulam</option>
+                    <option>Kozhikode</option>
+                    <option>Palakkad</option>
+                    <option>Kollam</option>
+                    <option>kannur</option>
+                    <option>Kasarkodu</option>
+                    <option>idukki</option>
+                    <option>kottayam</option>
+                    <option>Thrissur</option>
+                    <option>Pathanamthitta</option>
+                    <option>Malappuram</option>
+                    <option>Wayanad</option>
+                    <option>Thriruvanathapuram</option>
+
+                </select><br><br>
+
+                <label  class="lab-head" for="city">city:</label>
+                <input class="txt-input"  type="text" name="city" placeholder="enter your city" id="city" required><br><br>
+
+
+                <label class="lab-head"  for="pincode">pincode:</label>
+                <input class="txt-input"  type="text"name="pincode" placeholder="enter your pincode"id="pincode" required><br><br>
+
+                <label class="lab-head"  for="Name">Guardian Name: </label>
+                <input  class="txt-input" type="text"name="guardianname"  placeholder="Your guardian Name"id="Full Name" required><br><br>
+
+                <label class="lab-head"  for="phonenumber">mobile:</label>
+                <input class="txt-input"  type="text"name="guardianmobile"  placeholder="Your guardian number"id="phonenumber" required><br><br>
+                
+                <label class="lab-head2"  for="photo">SSLC Cirtificate :</label>
+                <input type="file"name="sslccertificate" placeholder="Your certificate"id="photo"><br><br>
+            
+                <label class="lab-head"  for="mark">SSLC persontage:</label>
+                <input class="txt-input"  type="text"name="mark"  placeholder="Your persentage" id="mark"><br><br>
+
+                <label class="lab-head"  for="year">SSLC pass out year:</label>
+                <input class="txt-input"  type="text"name="sslcpassoutyear"  placeholder="Your Passout year" id="year " required><br><br>
+                
+                <label class="lab-head"  for="name">School name:</label>
+                <input class="txt-input"  type="text"name="schoolname"  placeholder="Your Schoolname" id="name" required><br><br>
+            
+                <label class="lab-head"  for="name">School location:</label>
+                <input  class="txt-input" type="text"name="schoollocation"  placeholder="Your Shoollocation" id="name" required><br><br>
+            
+                <label class="lab-head"  for="name">HSS name:</label>
+                <input class="txt-input"  type="text"name="hssname"  placeholder="Your Hssname" id="name" required><br><br>
+            
+                <label class="lab-head2"  for="photo">HSS Certificate :</label>
+                <input   type="file"name="hsscertificate"  placeholder="Your Hsscertificate" id="photo"><br><br>
+            
+                <label class="lab-head"  for="mark">HSS persontage:</label>
+                <input class="txt-input"  type="text"name="hsspersentage"  placeholder="Your Hsspersentage" id="mark" required><br><br>
+        
+                <label class="lab-head"  for="year">HSS pass out year:</label>
+                <input  class="txt-input" type="text"name="hsspassoutyear"  placeholder="Your Hsspassoutyear "id="year" required><br><br>
+
+                <label class="lab-head"  for="place">HSS place:</label>
+                <input class="txt-input"  type="text"name="place"  placeholder="Your Place" id="place" required><br><br>
+                <div class="btn-div">
+                    <button class="btn-submit" type="submit">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+  </body>
+</html>
